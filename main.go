@@ -2,6 +2,7 @@ package main
 
 import (
 	"Assignment_2_CST_412/firestore"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -17,14 +18,20 @@ func main() {
 
 	//We use whatever port the OS provides us.
 	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8000" // Default port if not specified
+	}
+	fmt.Println(":" + port)
 
 	//Handlefunc tells the app that when anyone enters the default page the "mainPage" method will run.
 	http.HandleFunc("/", mainPage)
 
-	log.Println("Running on port" + port)
-	err := http.ListenAndServe(port, nil)
+	log.Println("Running on port :" + port)
+
+	//Listen on chosen port and handle error if present.
+	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
-		return
+		log.Println(err)
 	}
 }
 
