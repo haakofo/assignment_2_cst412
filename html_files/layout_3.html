@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h2{
+            font-family: Calibri,serif;
+        }
+        div{
+            font-family: Calibri,serif;
+            border-color: green;
+            text-align: left;
+        }
+        p{
+            color: black;
+            font-family: Calibri,serif;
+        }
+        body{
+            padding-left: 10%;
+            margin: 0;
+            background-color: beige;
+        }
+        .underLine{
+            text-decoration: underline;
+        }
+        .Parent {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .child1 {
+            width: 50%;
+            height: 100vh;
+            text-align: right;
+            color: white;
+        }
+
+        .child2 {
+            width: 50%;
+            color: green;
+            height: 100vh;
+        }
+        .addNew{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        .editText{
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        textarea{
+            font-family: Calibri,serif;
+            font-size: 15px;
+        }
+        #createAsset{
+            left:10%;
+            width:100px;
+            height:40px;
+            position: absolute;
+            z-index: 2;
+            background: orange;
+        }
+        #createAsset:hover{
+            background-color: darkgrey;
+            cursor: pointer;
+        }
+        img{
+            height: 70%;
+            width: auto;
+            border-radius: 30px;
+        }
+        #bot_img{
+            height: 60%;
+            width: 100%;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="Parent">
+    <div class="child1">
+        <form>
+            <div><p class="underLine">Asset ID: </p>
+                <label><input type="text" name="asset_id" class="editText" placeholder="Asset ID" required></label></div>
+
+            <div><p class="underLine">Manufacturer: </p>
+                <label><input type="text" name="asset_manufacturer" class="editText" placeholder="Manufacturer" required></label></div>
+
+            <div><p class="underLine">Manufacturer Address: </p>
+                <label><input type="text" name="asset_manufacturer_address" class="editText" placeholder="Manufacturer Address" required></label></div>
+
+            <div><p class="underLine">Manufacturer Website: </p>
+                <label><input type="text" name="asset_manufacturer_website" class="editText" placeholder="Manufacturer Website" required></label></div>
+
+            <div><p class="underLine">Manufacturer Phone: </p>
+                <label><input type="text" name="asset_manufacturer_phone" class="editText" placeholder="Manufacturer Phone" required></label></div>
+
+            <div><p class="underLine">Model: </p>
+                <label><input type="text" name="asset_model"  class="editText" placeholder="Model" required></label></div>
+
+            <div><p class="underLine">Date Purchased: </p>
+                <label><input type="date" name="asset_date_purchased" max="2060-01-01" min="2022-01-01" class="editText" required></label></div>
+
+            <div><p class="underLine">Purchase Price: </p>
+                <label><input type="text" name="asset_purchase_price" value="$" class="editText" placeholder="Purchase Price" required></label></div>
+
+            <div><p class="underLine">Warranty Date: </p>
+                <label><input type="date" name="asset_warranty_date" max="2060-01-01" min="2022-01-01" class="editText" required></label></div>
+
+            <div><p class="underLine">Description: </p>
+                <label><textarea name="asset_description" rows="4" cols="50" placeholder="Description" required></textarea></label></div>
+
+
+            <div><p class="underLine">Comments: </p>
+                {{range .Comments}}
+                {{if .Comment}}
+                <label><textarea rows="4" cols="50">{{.Comment}}</textarea></label>
+                {{end}}
+                {{end}}
+            </div>
+
+            <div><p class="underLine">New Comment: </p>
+                <label><textarea name="asset_new_comment" rows="4" cols="50" placeholder="New Comment"></textarea></label>
+            </div>
+
+            <button formmethod="POST" value="createAsset" type="submit" name="createAsset" id="createAsset" onclick="myFunction()">Add Asset</button>
+        </form>
+    </div>
+
+    <div class="child2">
+        <img src="https://img.freepik.com/free-vector/technical-support-system-calibration-software-configuration-settings-adjustments-professional-computer-maintenance-service-technician-occupation-concept-illustration_335657-2051.jpg?w=2000" alt="img">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <img src="https://ic.c4assets.com/brands/the-it-crowd/series-1/episode-2/fe20829f-d638-4392-a95b-453d5081be9d.jpg?interpolation=progressive-bicubic&output-format=jpeg&output-quality=90&resize=534px:*" id="bot_img" alt="img">
+    </div>
+</div>
+
+</body>
+</html>

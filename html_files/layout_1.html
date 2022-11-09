@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h1{
+            font-family: Calibri,serif;
+        }
+        h1:hover{
+            cursor: pointer;
+        }
+        #searchInput
+        {
+            font-family: Calibri,serif;
+            border:solid 1px green;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle
+        }
+        #searchButton
+        {
+            font-family: Calibri,serif;
+            border: solid 1px green;
+            height: 22px;
+            line-height: 22px;
+            vertical-align: middle
+        }
+        label{
+            font-family: Calibri,serif;
+        }
+        body{
+            padding-left: 10%;
+            margin: 0;
+            background-color: beige;
+        }
+        p{
+            font-family: Calibri,serif;
+        }
+    </style>
+</head>
+<body>
+
+<a onclick="myFunction()" id="mainHeader" methods="POST">
+    <h1>FossumIT Assets</h1>
+</a>
+
+<p>Hint: Press search again without inputting anything to clean up the screen! :)</p>
+
+<script>
+    function myFunction() {
+        location.reload();
+    }
+</script>
+
+<form method="POST">
+    <label for="searchInput" id="inputID">Asset ID:</label><br>
+    <input type="search" id="searchInput" name="asset">
+    <button formmethod="POST" value="Search" type="submit" name="searchButton">Search</button>
+    <button formmethod="POST" value="newAsset" type="submit" name="newAsset">Add New</button>
+</form>
+
+</body>
+</html>

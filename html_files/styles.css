@@ -1,0 +1,21 @@
+h2{
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 3rem;
+    border-radius: 30px;
+    font-family: "customFont_1"
+}
+
+body{
+    background-image: url(https://freefrontend.com/assets/img/css-background-patterns/background-pattern-3.png);
+    background-size: contain;
+    background-blend-mode: lighten;
+}
+
+@font-face {
+    font-family: customFont_1;
+    src: url(amaticsc-regular-webfont.woff);
+}
+
