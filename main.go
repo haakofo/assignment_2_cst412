@@ -36,10 +36,10 @@ func main() {
 func mainPage(w http.ResponseWriter, r *http.Request) {
 
 	//Parse the initial HTML template.
-	Tmpl := template.Must(template.ParseFiles("html_files\\layout_1.html"))
+	tmpl := template.Must(template.ParseFiles("html_files\\layout_1.html"))
 
 	//Execute the first template with "nil" data (null). This is what will make the html file display in the browser.
-	err := Tmpl.Execute(w, nil)
+	err := tmpl.Execute(w, nil)
 	if err != nil {
 		return
 	}
@@ -49,8 +49,8 @@ func mainPage(w http.ResponseWriter, r *http.Request) {
 
 	//Check if the "Add New" button is pressed. If so initiate the layout_3 template and execute it.
 	if r.FormValue("newAsset") == "newAsset" {
-		Tmpl = template.Must(template.ParseFiles("html_files\\layout_3.html"))
-		err := Tmpl.Execute(w, nil)
+		tmpl = template.Must(template.ParseFiles("html_files\\layout_3.html"))
+		err := tmpl.Execute(w, nil)
 		if err != nil {
 			return
 		}
