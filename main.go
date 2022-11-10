@@ -18,9 +18,6 @@ func main() {
 
 	//We use whatever port the OS provides us.
 	port := os.Getenv("PORT")
-	if port == "" {
-		log.Fatal("$PORT must be set")
-	}
 	fmt.Println(":" + port)
 
 	//Handlefunc tells the app that when anyone enters the default page the "mainPage" method will run.
@@ -39,10 +36,10 @@ func main() {
 func mainPage(w http.ResponseWriter, r *http.Request) {
 
 	//Parse the initial HTML template.
-	tmpl := template.Must(template.ParseFiles("html_files\\layout_1.html"))
+	Tmpl := template.Must(template.ParseFiles("html_files\\layout_1.html"))
 
 	//Execute the first template with "nil" data (null). This is what will make the html file display in the browser.
-	err := tmpl.Execute(w, nil)
+	err := Tmpl.Execute(w, nil)
 	if err != nil {
 		return
 	}
@@ -52,8 +49,8 @@ func mainPage(w http.ResponseWriter, r *http.Request) {
 
 	//Check if the "Add New" button is pressed. If so initiate the layout_3 template and execute it.
 	if r.FormValue("newAsset") == "newAsset" {
-		tmpl = template.Must(template.ParseFiles("html_files\\layout_3.html"))
-		err := tmpl.Execute(w, nil)
+		Tmpl = template.Must(template.ParseFiles("html_files\\layout_3.html"))
+		err := Tmpl.Execute(w, nil)
 		if err != nil {
 			return
 		}
