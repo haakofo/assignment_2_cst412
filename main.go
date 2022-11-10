@@ -19,7 +19,7 @@ func main() {
 	//We use whatever port the OS provides us.
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000" // Default port if not specified
+		log.Fatal("$PORT must be set")
 	}
 	fmt.Println(":" + port)
 

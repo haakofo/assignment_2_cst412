@@ -4,11 +4,28 @@ go 1.18
 
 require (
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/corthmann/go-time-intervals v0.0.0-20190625085138-4c18cb04b8d6
+	github.com/gin-gonic/gin v1.8.1
+	github.com/heroku/x v0.0.55
 	google.golang.org/api v0.101.0
 )
 
-require github.com/fxtlabs/date v0.0.0-20150819233934-d9ab6e2a88a9 // indirect
+require (
+	github.com/fxtlabs/date v0.0.0-20150819233934-d9ab6e2a88a9
+	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/go-playground/locales v0.14.0 // indirect
+	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/go-playground/validator/v10 v10.10.0 // indirect
+	github.com/goccy/go-json v0.9.7 // indirect
+	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/leodido/go-urn v1.2.1 // indirect
+	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
+	github.com/modern-go/reflect2 v1.0.2 // indirect
+	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
+	github.com/ugorji/go/codec v1.2.7 // indirect
+	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
+)
 
 require (
 	cloud.google.com/go v0.104.0 // indirect
